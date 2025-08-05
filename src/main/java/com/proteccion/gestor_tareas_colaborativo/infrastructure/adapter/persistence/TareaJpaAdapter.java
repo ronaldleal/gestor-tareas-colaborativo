@@ -23,8 +23,8 @@ public class TareaJpaAdapter implements TareaRepositoryPort {
     }
 
     @Override
-    public List<Tarea> findByUsuarioAsignado(Long usuarioId) {
-        return repository.findByUsuarioAsignadoId(usuarioId)
+    public List<Tarea> findByUsuarioAsignado(Tarea usuarioId) {
+        return repository.findByUsuarioAsignadoId(usuarioId.getUsuarioAsignadoId())
                 .stream()
                 .map(this::mapToDomain)
                 .toList();

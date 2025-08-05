@@ -3,10 +3,10 @@ package com.proteccion.gestor_tareas_colaborativo.application.config;
 import com.proteccion.gestor_tareas_colaborativo.application.port.out.PasswordEncoder;
 import com.proteccion.gestor_tareas_colaborativo.application.port.out.TareaRepositoryPort;
 import com.proteccion.gestor_tareas_colaborativo.application.service.CrearTareaService;
+import com.proteccion.gestor_tareas_colaborativo.domain.repository.UserRepository;
 import com.proteccion.gestor_tareas_colaborativo.domain.usecase.LoginUserUseCase;
 import com.proteccion.gestor_tareas_colaborativo.domain.usecase.RegisterUserUseCase;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.gateway.JwtProvider;
-import com.proteccion.gestor_tareas_colaborativo.domain.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

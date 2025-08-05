@@ -4,7 +4,6 @@ import com.proteccion.gestor_tareas_colaborativo.domain.model.Estado;
 import com.proteccion.gestor_tareas_colaborativo.domain.model.Tarea;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 

@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface TareaRepositoryPort {
     Tarea save(Tarea tarea);
-    List<Tarea> findByUsuarioAsignado(Long usuarioId);
+    List<Tarea> findByUsuarioAsignado(Tarea usuarioId);
 }

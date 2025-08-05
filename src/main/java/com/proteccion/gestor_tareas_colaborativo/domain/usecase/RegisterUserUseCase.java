@@ -2,13 +2,13 @@ package com.proteccion.gestor_tareas_colaborativo.domain.usecase;
 
 
 import com.proteccion.gestor_tareas_colaborativo.application.port.out.PasswordEncoder;
+import com.proteccion.gestor_tareas_colaborativo.domain.repository.UserRepository;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.TokenResponse;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.User;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.exception.UserInternalException;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.exception.UserInvalidException;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.gateway.JwtProvider;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.utils.PasswordValidator;
-import com.proteccion.gestor_tareas_colaborativo.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 import static ch.qos.logback.core.util.StringUtil.isNullOrEmpty;

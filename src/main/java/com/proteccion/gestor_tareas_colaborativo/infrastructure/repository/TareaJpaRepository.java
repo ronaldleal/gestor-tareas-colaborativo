@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface TareaJpaRepository extends JpaRepository<TareaEntity, Long> {
 
-    List<TareaEntity> findByUsuarioAsignadoId(Long usuarioId);
+    List<TareaEntity> findByUsuarioAsignadoId(Long usuarioCreadorId);
 }

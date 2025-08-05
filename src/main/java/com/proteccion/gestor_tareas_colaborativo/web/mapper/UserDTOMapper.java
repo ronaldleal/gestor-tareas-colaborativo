@@ -10,5 +10,4 @@ public interface UserDTOMapper {
     UserDTOMapper INSTANCE = Mappers.getMapper(UserDTOMapper.class);
 
     User toDomain(UserDTO userDTO);
-
 }

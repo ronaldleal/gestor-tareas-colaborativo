@@ -3,7 +3,6 @@ package com.proteccion.gestor_tareas_colaborativo.infrastructure.adapter.securit
 
 import com.proteccion.gestor_tareas_colaborativo.application.port.out.PasswordEncoder;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Component;
 
 @Component

@@ -10,5 +10,5 @@ public class Usuario {
     private String nombre;
     private String email;
     private String password;
-    private Rol rol; // Enum ADMIN, USER
+    private Rol rol;
 }

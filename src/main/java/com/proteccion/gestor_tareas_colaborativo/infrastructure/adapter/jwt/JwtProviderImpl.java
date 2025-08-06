@@ -25,7 +25,7 @@ public class JwtProviderImpl implements JwtProvider {
         Date expiration = new Date(System.currentTimeMillis() + 3600_000);
 
         String token = Jwts.builder()
-                .setSubject(userName)
+                //.setSubject(userName)
                 .setIssuedAt(issuedAt)
                 .setExpiration(expiration)
                 .signWith(key, SignatureAlgorithm.HS256)

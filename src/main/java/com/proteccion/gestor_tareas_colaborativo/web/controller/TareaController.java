@@ -38,6 +38,35 @@ public class TareaController {
         return ResponseEntity.ok(tareasDto);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<TareaResponseDto> modificarTarea(
+            @PathVariable Long id,
+            @RequestBody @Valid TareaRequestDto tareaUpdateDto) {
+
+        Tarea tareaModificada = new Tarea(
+                id,
+                tareaUpdateDto.getTitulo(),
+                tareaUpdateDto.getDescripcion(),
+                null,
+                tareaUpdateDto.getFechaVencimiento(),
+                null,
+                tareaUpdateDto.getUsuarioAsignadoId()
+        );
+
+        Tarea tareaActualizada = crearTareaUseCase.modificarTarea(id, tareaModificada);
+
+        TareaResponseDto response = new TareaResponseDto(
+                tareaActualizada.getId(),
+                tareaActualizada.getTitulo(),
+                tareaActualizada.getDescripcion(),
+                tareaActualizada.getEstado(),
+                tareaActualizada.getFechaVencimiento(),
+                tareaActualizada.getUsuarioCreadorId(),
+                tareaActualizada.getUsuarioAsignadoId()
+        );
+
+        return ResponseEntity.ok(response);
+    }
 
 
     private List<TareaResponseDto> mapToResponseDto(List<Tarea> tareas) {

@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @AllArgsConstructor
@@ -53,4 +54,11 @@ public class TareaJpaAdapter implements TareaRepositoryPort {
                 entity.getUsuarioAsignadoId()
         );
     }
+
+    @Override
+    public Optional<Tarea> findById(Long id) {
+        return repository.findById(id)
+                .map(this::mapToDomain);
+    }
+
 }

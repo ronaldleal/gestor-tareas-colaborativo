@@ -6,6 +6,7 @@ import com.proteccion.gestor_tareas_colaborativo.application.service.CrearTareaS
 import com.proteccion.gestor_tareas_colaborativo.domain.repository.UserRepository;
 import com.proteccion.gestor_tareas_colaborativo.domain.usecase.LoginUserUseCase;
 import com.proteccion.gestor_tareas_colaborativo.domain.usecase.RegisterUserUseCase;
+import com.proteccion.gestor_tareas_colaborativo.domain.usecase.TokenUseCase;
 import com.proteccion.gestor_tareas_colaborativo.domain.user.gateway.JwtProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,5 +30,11 @@ public class UseCaseConfig {
                                                 JwtProvider jwtProvider,
                                                 PasswordEncoder passwordEncoder) {
         return new LoginUserUseCase(userRepository, jwtProvider, passwordEncoder);
+    }
+
+    @Bean
+    protected TokenUseCase tokenUseCase(JwtProvider jwtProvider,
+                                        PasswordEncoder passwordEncoder){
+        return new TokenUseCase(jwtProvider,passwordEncoder);
     }
 }

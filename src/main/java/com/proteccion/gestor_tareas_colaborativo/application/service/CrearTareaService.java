@@ -17,10 +17,25 @@ public class CrearTareaService implements CrearTareaUseCase{
         return tareaRepository.save(tarea);
     }
 
+    @Override
     public List<Tarea> findByUsuarioAsignado(Long usuarioId) {
         Tarea tarea = new Tarea();
         tarea.setUsuarioAsignadoId(usuarioId);
         return tareaRepository.findByUsuarioAsignado(tarea);
+    }
+
+    @Override
+    public Tarea modificarTarea(Long id, Tarea tareaModificada) {
+        Tarea tareaExistente = tareaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarea no encontrada"));
+
+        tareaExistente.setTitulo(tareaModificada.getTitulo());
+        tareaExistente.setDescripcion(tareaModificada.getDescripcion());
+        tareaExistente.setFechaVencimiento(tareaModificada.getFechaVencimiento());
+        tareaExistente.setUsuarioAsignadoId(tareaModificada.getUsuarioAsignadoId());
+        tareaExistente.setEstado(tareaModificada.getEstado());
+
+        return tareaRepository.save(tareaExistente);
     }
 
 }

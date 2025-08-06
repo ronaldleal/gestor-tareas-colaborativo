@@ -14,8 +14,9 @@ public class UserDataRepositoryAdapter implements UserRepository {
     private final UserDataRepository userDataRepository;
 
     @Override
-    public void save(User user) {
+    public User save(User user) {
         userDataRepository.save(UserDataMapper.INSTANCE.toUserData(user));
+        return user;
     }
 
     @Override

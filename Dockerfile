@@ -4,17 +4,19 @@ FROM openjdk:17-jdk-slim AS build
 # Establecer el directorio de trabajo
 WORKDIR /app
 
-# Copiar el archivo pom.xml (para Maven) o build.gradle (para Gradle)
-# Este paso es útil si necesitas instalar dependencias en el contenedor durante el build
-
+# Copiar el archivo build.gradle (y otros archivos necesarios para Gradle)
 COPY build.gradle .
+COPY settings.gradle .
+COPY gradlew .
+COPY gradle /app/gradle
+
+# Dar permisos de ejecución a gradlew
+RUN chmod +x gradlew
 
 # Copiar el código fuente
 COPY src ./src
 
 # Ejecutar el comando para compilar la aplicación
-
-# Si usas Gradle, usa este comando en su lugar
 RUN ./gradlew build
 
 # Establecemos la imagen de ejecución para la aplicación

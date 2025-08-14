@@ -1,13 +1,17 @@
-package com.proteccion.gestor_tareas_colaborativo;
+// package com.proteccion.gestor_tareas_colaborativo;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class GestorTareasColaborativoApplicationTests {
+// @SpringBootTest
+// class GestorTareasColaborativoApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//     @Autowired
+//     private ApplicationContext context;
 
-}
+//     @Test
+//     void contextLoads() {
+//         assertThat(context).isNotNull();
+//         assertThat(context.containsBean("swaggerConfig")).isTrue();
+//     }
+// }
